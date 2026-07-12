@@ -1,44 +1,40 @@
-# Python Data Project Template
+# Plantilla para Proyectos de Análisis de Datos
 
-This repository is my personal template for starting new Python Data Analytics projects.
+Esta plantilla la utilizo como punto de partida para todos mis proyectos de **Python + Análisis de Datos**.
 
-It includes the recommended folder structure, a virtual environment, dependencies and basic configuration to start working quickly.
+Incluye la estructura de carpetas, entorno virtual y dependencias básicas para empezar a trabajar rápidamente.
 
 ---
 
-# Recommended Workflow
+# Flujo recomendado
 
-## 1. Create a new repository on GitHub
+## 1. Crear un nuevo repositorio en GitHub
 
-- Create a new repository.
-- Clone it locally.
+Crear el repositorio desde GitHub y clonarlo en el ordenador.
 
-Example:
+Ejemplo:
 
 ```bash
-git clone git@github.com:YOUR_USERNAME/YOUR_REPOSITORY.git
+git clone git@github.com:alejandromtdata/NOMBRE_DEL_REPOSITORIO.git
 
-cd YOUR_REPOSITORY
+cd NOMBRE_DEL_REPOSITORIO
 ```
 
-Replace:
-
-- `YOUR_USERNAME` → your GitHub username.
-- `YOUR_REPOSITORY` → the name of your new project.
+Sustituir **NOMBRE_DEL_REPOSITORIO** por el nombre del proyecto.
 
 ---
 
-## 2. Create the virtual environment
+## 2. Crear el entorno virtual
 
 ```bash
 python3 -m venv .venv
 ```
 
-This creates an isolated Python environment for the project.
+Se crea un entorno virtual independiente para el proyecto.
 
 ---
 
-## 3. Activate the virtual environment
+## 3. Activar el entorno virtual
 
 ### macOS / Linux
 
@@ -52,15 +48,17 @@ source .venv/bin/activate
 .venv\Scripts\activate
 ```
 
-When activated, your terminal should display:
+Si todo ha ido bien aparecerá:
 
 ```text
 (.venv)
 ```
 
+al principio de la terminal.
+
 ---
 
-## 4. Update pip
+## 4. Actualizar pip
 
 ```bash
 python -m pip install --upgrade pip
@@ -68,7 +66,7 @@ python -m pip install --upgrade pip
 
 ---
 
-## 5. Install project dependencies
+## 5. Instalar las dependencias
 
 ```bash
 pip install -r requirements.txt
@@ -76,21 +74,21 @@ pip install -r requirements.txt
 
 ---
 
-## 6. Select the Python interpreter in VS Code
+## 6. Seleccionar el intérprete en VS Code
 
-Open Command Palette:
+Abrir la paleta de comandos:
 
 ```
 Cmd + Shift + P
 ```
 
-Search:
+Buscar:
 
 ```
 Python: Select Interpreter
 ```
 
-Choose:
+Seleccionar:
 
 ```
 .venv
@@ -98,23 +96,19 @@ Choose:
 
 ---
 
-## 7. Start Jupyter
+## 7. Crear el notebook
 
-Create a notebook inside:
+Crear un notebook dentro de:
 
 ```
 notebooks/
 ```
 
-Select the kernel:
-
-```
-.venv
-```
+Y seleccionar el kernel del entorno virtual.
 
 ---
 
-# Project Structure
+# Estructura del proyecto
 
 ```text
 data/
@@ -132,14 +126,14 @@ src/
 
 tests/
 
-requirements.txt
-
 README.md
+
+requirements.txt
 ```
 
 ---
 
-# Installed Libraries
+# Librerías instaladas por defecto
 
 - pandas
 - numpy
@@ -147,13 +141,13 @@ README.md
 - pdfplumber
 - ipykernel
 
-Add new libraries when needed:
+Si instalo nuevas librerías:
 
 ```bash
-pip install library_name
+pip install nombre_libreria
 ```
 
-Update requirements:
+Actualizar requirements:
 
 ```bash
 pip freeze > requirements.txt
@@ -161,14 +155,14 @@ pip freeze > requirements.txt
 
 ---
 
-# Reading Files
+# Lectura de archivos
 
 ## CSV
 
 ```python
 import pandas as pd
 
-df = pd.read_csv("data/raw/file.csv")
+df = pd.read_csv("data/raw/archivo.csv")
 ```
 
 ---
@@ -178,7 +172,7 @@ df = pd.read_csv("data/raw/file.csv")
 ```python
 from pathlib import Path
 
-text = Path("data/raw/file.txt").read_text(encoding="utf-8")
+texto = Path("data/raw/archivo.txt").read_text(encoding="utf-8")
 ```
 
 ---
@@ -188,18 +182,30 @@ text = Path("data/raw/file.txt").read_text(encoding="utf-8")
 ```python
 import pdfplumber
 
-with pdfplumber.open("data/raw/file.pdf") as pdf:
-    text = pdf.pages[0].extract_text()
+with pdfplumber.open("data/raw/archivo.pdf") as pdf:
+    texto = pdf.pages[0].extract_text()
 ```
 
 ---
 
-# Before the First Commit
+# Antes del primer commit
 
-- [ ] Virtual environment created
-- [ ] Dependencies installed
-- [ ] Interpreter selected
-- [ ] Notebook created
-- [ ] README updated
-- [ ] requirements.txt updated
-- [ ] First commit completed
+- [ ] Entorno virtual creado
+- [ ] Dependencias instaladas
+- [ ] Intérprete seleccionado
+- [ ] Notebook creado
+- [ ] README actualizado
+- [ ] requirements.txt actualizado
+- [ ] Primer commit realizado
+
+---
+
+# Ideas para futuros proyectos
+
+- SQL
+- APIs
+- Web Scraping
+- Power BI
+- Machine Learning
+- Estadística
+- Automatización
