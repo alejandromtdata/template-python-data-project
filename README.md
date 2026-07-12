@@ -10,7 +10,7 @@ Plantilla base para proyectos de análisis de datos en **Python**, utilizando en
 
 ### Clonar el repositorio
 
-git clone git@github.com:alejandromtdev/plantilla_datascience.git
+git clone git@github.com:  alejandromtdev/plantilla_datascience.git
 cd plantilla_datascience
 
 ---
@@ -70,9 +70,3 @@ with pdfplumber.open("data/raw/archivo.pdf") as pdf:
     texto_pdf = pdf.pages[0].extract_text()
 
 ---
-
-### Proyecto creado por Alejandromtdev como plantilla base para análisis de datos con Python y VS Code.
-
-📬 Contacto: alejandromtdev@gmail.com
-
-💻 GitHub: https://github.com/alejandromtdev
