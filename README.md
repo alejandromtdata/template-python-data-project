@@ -1,78 +1,215 @@
-# Plantilla analisis de datos
+# Plantilla Python Analytics
 
-## Proyecto de Análisis de Datos — practica_io_textos
-
-Plantilla base para proyectos de análisis de datos en **Python**, utilizando entornos virtuales y notebooks de **Jupyter / VS Code**.
+Plantilla base para proyectos de **análisis de datos con Python**, diseñada para trabajar con un entorno reproducible utilizando **uv**, **Jupyter Notebooks** y **VS Code**.
 
 ---
 
-## Configuración del entorno
+## Tecnologías
 
-### Clonar el repositorio
-
-git clone git@github.com:alejandromtdev/plantilla_datascience.git
-cd plantilla_datascience
-
----
-
-### Creación y activación del entorno virtual 
-
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+- Python
+- uv
+- Pandas
+- NumPy
+- Matplotlib
+- Jupyter / ipykernel
+- Git
+- GitHub
+- VS Code
 
 ---
 
-### Actualizar pip
+## Estructura del proyecto
 
-python -m pip install --upgrade pip
+```text
+plantilla_python_analytics/
+│
+├── assets/
+│   ├── images/
+│   └── screenshots/
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── docs/
+├── notebooks/
+├── reports/
+│
+├── src/
+│   └── __init__.py
+│
+├── tests/
+│
+├── .gitignore
+├── .python-version
+├── README.md
+├── pyproject.toml
+└── uv.lock
+```
+
+### `assets/`
+
+Recursos visuales del proyecto.
+
+```text
+assets/
+├── images/       
+└── screenshots/  
+```
+
+### `data/`
+
+Datos utilizados durante el proyecto.
+
+```text
+data/
+├── raw/        
+└── processed/  
+```
+
+### `docs/`
+
+Documentación adicional del proyecto.
+
+### `notebooks/`
+
+Jupyter Notebooks utilizados durante el análisis.
+
+### `reports/`
+
+Resultados generados durante el proyecto.
+
+### `src/`
+
+Código Python reutilizable.
+
+### `tests/`
+
+Pruebas para funciones o módulos desarrollados en `src/`.
 
 ---
 
-### Instalar las dependencias
+# Entorno de Python
 
-pip install -r requirements.txt
+El proyecto utiliza **uv** para gestionar dependencias y entorno virtual.
 
----
+La versión de Python utilizada está definida en:
 
-### Dependencias principales 
-### El archivo requirements.txt incluye las librerías necesarias:
+```text
+.python-version
+```
 
-pandas
-numpy
-matplotlib
-pdfplumber
-ipykernel
+Las dependencias del proyecto están definidas en:
 
----
+```text
+pyproject.toml
+```
 
-### Ejemplo de lectura de datos en un notebook:
+Y las versiones exactas instaladas quedan registradas en:
 
-import pandas as pd
-from pathlib import Path
-import pdfplumber
+```text
+uv.lock
+```
 
----
+El entorno virtual se crea localmente en:
 
-### Leer CSV
-df = pd.read_csv("data/raw/archivo.csv")
+```text
+.venv/
+```
 
----
-
-### Leer TXT
-texto = Path("data/raw/archivo.txt").read_text(encoding="utf-8")
+Este directorio está incluido en `.gitignore` y no se sube a GitHub.
 
 ---
 
-### Leer PDF
-with pdfplumber.open("data/raw/archivo.pdf") as pdf:
-    texto_pdf = pdf.pages[0].extract_text()
+# Instalación
+
+## 1. Clonar el repositorio
+
+```bash
+git clone <URL_DEL_REPOSITORIO>
+```
+
+Entrar en la carpeta:
+
+```bash
+cd plantilla_python_analytics
+```
+
+## 2. Sincronizar el entorno
+
+```bash
+uv sync
+```
+
+Este comando instalará las dependencias definidas en el proyecto y creará el entorno virtual si es necesario.
 
 ---
 
-### Proyecto creado por Alejandromtdev como plantilla base para análisis de datos con Python y VS Code.
+# Ejecutar Python
 
-📬 Contacto: alejandromtdev@gmail.com
+Para ejecutar Python utilizando el entorno del proyecto:
 
-💻 GitHub: https://github.com/alejandromtdev
+```bash
+uv run python
+```
+
+Para comprobar la versión:
+
+```bash
+uv run python --version
+```
+
+---
+
+# Jupyter Notebooks y VS Code
+
+Abrir el proyecto en VS Code.
+
+Al crear o abrir un notebook, seleccionar como intérprete/kernel el entorno virtual del proyecto:
+
+```text
+plantilla-python-analytics
+.venv/bin/python
+```
+
+De esta forma, el notebook utilizará las mismas dependencias definidas en el proyecto.
+
+---
+
+# Dependencias
+
+Las dependencias principales actuales son:
+
+- Pandas
+- NumPy
+- Matplotlib
+
+Para trabajar con Jupyter se utiliza:
+
+- ipykernel
+
+Las dependencias se gestionan desde `pyproject.toml`.
+
+Para añadir una nueva dependencia al proyecto:
+
+```bash
+uv add nombre_paquete
+```
+
+Ejemplo:
+
+```bash
+uv add seaborn
+```
+
+Para añadir una dependencia únicamente para desarrollo:
+
+```bash
+uv add --dev nombre_paquete
+```
+
+---
+
+## Objetivo de la plantilla
+
+Esta plantilla está diseñada para proyectos de **Data Analytics con Python** .
